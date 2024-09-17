@@ -2,6 +2,10 @@
 
 A modern, lightweight starter kit for building awesome React applications with Tailwind CSS and more!
 
+
+![Project Starter Visual](./public/visual.png)
+
+
 ## Features
 
 - React 18 with TypeScript
@@ -73,3 +77,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
