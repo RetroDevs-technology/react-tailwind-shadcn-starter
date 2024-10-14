@@ -1,23 +1,15 @@
-import { getToken } from '@/lib/cookies'
-import { useGlobalAction, useGlobalStore } from './store-hooks'
-import { useParams } from 'next/navigation'
+import { getToken } from "@/lib/cookies";
+import { useGlobalAction, useGlobalStore } from "./store-hooks";
 
 export function useAppStore() {
-  const token = getToken()
+  const token = getToken();
 
   // User-related state and actions
-  const { user, isAuthenticated } = useGlobalStore((state) => state?.auth)
-  const { setUser, clearUser } = useGlobalAction((actions) => actions?.auth)
-  const userId = user?.userId
+  const { user, isAuthenticated } = useGlobalStore((state) => state?.auth);
+  const { setUser, clearUser } = useGlobalAction((actions) => actions?.auth);
+  const userId = user?.id;
 
-  // Get the username from the URL params
-  const params = useParams()
-  const urlUsername = params.profile as string
-
-  // Check if the current user is the profile owner
-  const isUser = user?.username === urlUsername || urlUsername === 'profile'
-
-  const notUser = !user || !token
+  const notUser = !user || !token;
 
   return {
     user,
@@ -25,7 +17,6 @@ export function useAppStore() {
     setUser,
     clearUser,
     isAuthenticated,
-    isUser,
     notUser,
-  }
+  };
 }
