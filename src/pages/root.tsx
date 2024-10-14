@@ -22,7 +22,7 @@ export default function Root() {
             text="Welcome to React Tailwind Starter"
           />
 
-          <p className="text-xl mb-8 max-w-2xl">
+          <p className="text-xl mb-8 max-w-2xl text-muted-foreground">
             A modern, lightweight starter kit for building awesome React apps
             with Tailwind CSS and more!
           </p>

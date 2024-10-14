@@ -1,33 +1,27 @@
+import { ModeToggle } from "@/components/theme/toggle";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-	return (
-		<header className="bg-white shadow-sm">
-			<div className="container mx-auto px-4 py-3 flex items-center justify-between">
-				<h1 className="text-3xl font-bold text-gray-800 font-heading">
-					Starter
-				</h1>
-				<nav>
-					<ul className="flex space-x-4">
-						<li>
-							<Link
-								to="/"
-								className="text-gray-600 hover:text-gray-900 transition-colors"
-							>
-								Home
-							</Link>
-						</li>
-						<li>
-							<Link
-								to="/about"
-								className="text-gray-600 hover:text-gray-900 transition-colors"
-							>
-								About
-							</Link>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-	);
+  return (
+    <header className="border-b shadow-sm">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <h1 className="text-3xl font-bold font-heading">Starter</h1>
+        <nav className="flex items-center space-x-4">
+          <ul className="flex space-x-4">
+            <li>
+              <Link to="/" className="transition-colors">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="transition-colors">
+                About
+              </Link>
+            </li>
+          </ul>
+          <ModeToggle />
+        </nav>
+      </div>
+    </header>
+  );
 }
